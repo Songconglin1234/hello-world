@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <head>
+    <meta charset=" utf-8" />
     <style>
         h1 {
             color: red;
-            text-align:center;
+            text-align: left;
+        }
+
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        td, tr {
+            border: 1px solid black;
+        }
         }
     </style>
+
     <title>
         my first page
     </title>
 </head>
+
 <body>
-    Hello ,world !
-</body>
+
+    <script type="text/javascript">
+    var rows = 6;
+    var cols = 5;
+ 
+    document.write("<table  border=1>");
+ 
+        for(var i=1;i<rows;i++)  //-----行-----
+    	    {
+    	    document.write("<tr>");
+    	    for(var j=1;j<cols;j++){   //----列------
+    	    document.write("<td>"+ i*j + "</td>"); //-----每个单元格里面的内容-------
+    	    }
+    	    document.write("</tr>");
+     }
+ 
+ 
+    document.write("</table>");
+    </script>
+
+
+    <form>
+        <input type=" text" placeholder="full" name=" name" />
+        <button> submit</button>
+
+    </form>
+ </body>
