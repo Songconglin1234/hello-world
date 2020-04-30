@@ -42,22 +42,23 @@ conn.commit()
  
 '''
 sql_createTb
-CREATE TABLE `passagers` (
+CREATE TABLE `passengers` (
 `id` INT(11) NOT NULL AUTO_INCREMENT,
-`passager_name` VARCHAR(80) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
+`name` VARCHAR(80) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
 flights_id INT(11) NOT NULL REFERENCES flights(id),
 PRIMARY KEY (id)
 )
 '''
 
-sql_createTb = """CREATE TABLE `passagers` (
+sql_createTb = """CREATE TABLE `passengers` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
-   `passager_name` VARCHAR(80) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
-   flights_id INT(11) NOT NULL REFERENCES flights(id), 
+   `name` VARCHAR(80) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
+   flight_id INT(11) NOT NULL REFERENCES flights(id), 
    PRIMARY KEY (id))"""
 
 mycursor.execute(sql_createTb)
 conn.commit()
+conn.close()
    
 
 
